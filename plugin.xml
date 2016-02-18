@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.tyron.plugin.easemob" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>Easemob</name>
+	<preference name="APP_KEY" />
+	<js-module name="Easemob" src="www/Easemob.js">
+		<clobbers target="cordova.plugins.Easemob" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="Easemob">
+				<param name="android-package" value="com.tyron.plugin.easemob.Easemob" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<source-file src="src/android/Easemob.java" target-dir="src/com/tyron/plugin/easemob/Easemob" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="Easemob">
+				<param name="ios-package" value="Easemob" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/Easemob.m" />
+	</platform>
+</plugin>
