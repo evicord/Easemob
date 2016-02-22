@@ -540,7 +540,6 @@
         <resource-file src="src/ios/EaseUI_SDK/Resource/chat_location_preview@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/chat_receiver_bg@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/chat_sender_bg@2x.png" />
-        <resource-file src="src/ios/EaseUI_SDK/Resource/en.lproj/Localizable.strings" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/group@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/imageDownloadFail@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/messageSendFail@2x.png" />
@@ -566,6 +565,8 @@
         <resource-file src="src/ios/EaseUI_SDK/Resource/recordView/VoiceSearchFeedback019@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/recordView/VoiceSearchFeedback020@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/user@2x.png" />
-        <resource-file src="src/ios/EaseUI_SDK/Resource/zh-Hans.lproj/Localizable.strings" />
+    
+        <resource-file src="src/ios/EaseUI_SDK/Resource/en.lproj" />
+        <resource-file src="src/ios/EaseUI_SDK/Resource/zh-Hans.lproj" />
 	</platform>
 </plugin>
