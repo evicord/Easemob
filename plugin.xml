@@ -2,7 +2,8 @@
 <plugin id="com.tyrion.plugin.easemob" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Easemob</name>
 	<preference name="APP_KEY" />
-    <preference name="CERTIFICATE_KEY" />
+    <preference name="CERTIFICATE_DEBUG_KEY" />
+    <preference name="CERTIFICATE_RELEASE_KEY" />
 	<js-module name="Easemob" src="www/Easemob.js">
 		<clobbers target="cordova.plugins.Easemob" />
 	</js-module>
@@ -332,8 +333,10 @@
             <dict>
                 <key>APP_KEY</key>
                 <string>$APP_KEY</string>
-                <key>CERTIFICATE_KEY</key>
-                <string>$CERTIFICATE_KEY</string>
+                <key>CERTIFICATE_DEBUG_KEY</key>
+                <string>$CERTIFICATE_DEBUG_KEY</string>
+                <key>CERTIFICATE_RELEASE_KEY</key>
+                <string>$CERTIFICATE_RELEASE_KEY</string>
             </dict>
         </config-file>
         
