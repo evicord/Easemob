@@ -132,7 +132,7 @@
 
 - (void)tableViewDidTriggerHeaderRefresh
 {
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     [[[EaseMob sharedInstance] chatManager] asyncFetchBuddyListWithCompletion:^(NSArray *buddyList, EMError *error) {
         if (!error) {
             [weakSelf.dataArray removeAllObjects];

@@ -118,7 +118,7 @@ static EaseLocationViewController *defaultLocation = nil;
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:userLocation.location completionHandler:^(NSArray *array, NSError *error) {
         if (!error && array.count > 0) {

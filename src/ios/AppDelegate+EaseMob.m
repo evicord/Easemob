@@ -22,17 +22,20 @@
 - (void)easemobApplication:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"EaseSDK_Params" ofType:@"plist"];
+    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    data=[data objectForKey:@"params"];
     
 //#warning 初始化环信SDK，详细内容在AppDelegate+EaseMob.m 文件中
 //#warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
     NSString *apnsCertName = nil;
 #if DEBUG
-    apnsCertName = @"push_dev";
+    apnsCertName = [data objectForKey:@"CERTIFICATE_DEBUG_KEY"];
 #else
-    apnsCertName = @"push";
+    apnsCertName = [data objectForKey:@"CERTIFICATE_RELEASE_KEY"];
 #endif
 
-    NSString*appkey=@"evicord#panart";
+    NSString*appkey=[data objectForKey:@"APP_KEY"];
     [[EaseSDKHelper shareHelper] easemobApplication:application
                     didFinishLaunchingWithOptions:launchOptions
                                            appkey:appkey

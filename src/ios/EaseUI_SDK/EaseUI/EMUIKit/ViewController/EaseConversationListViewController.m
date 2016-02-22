@@ -131,7 +131,7 @@
     if (easeRefreshQueue == nil) {
         easeRefreshQueue = dispatch_queue_create("com.ease.easeui.refresh", DISPATCH_QUEUE_SERIAL);
     }
-    __weak typeof(self) weakself = self;
+    __weak __typeof(&*self)weakself = self;
     dispatch_async(easeRefreshQueue, ^{
         NSArray *conversations = [[EaseMob sharedInstance].chatManager conversations];
         NSArray* sorted = [conversations sortedArrayUsingComparator:

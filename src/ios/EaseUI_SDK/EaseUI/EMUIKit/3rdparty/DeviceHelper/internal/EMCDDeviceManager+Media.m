@@ -155,8 +155,7 @@ typedef NS_ENUM(NSInteger, EMAudioSession){
             return;
         }
     }
-    
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     _recorderEndDate = [NSDate date];
     
     if([_recorderEndDate timeIntervalSinceDate:_recorderStartDate] < [EMCDDeviceManager recordMinDuration]){

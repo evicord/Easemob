@@ -190,7 +190,7 @@
 - (void)joinChatroom:(NSString *)chatroomId
 {
     [self showHudInView:self.view hint:NSEaseLocalizedString(@"chatroom.joining",@"Joining the chatroom")];
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     [[EaseMob sharedInstance].chatManager asyncJoinChatroom:chatroomId completion:^(EMChatroom *chatroom, EMError *error){
         if (weakSelf)
         {
@@ -452,7 +452,8 @@
 
 - (void)_downloadMessageAttachments:(EMMessage *)message
 {
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
+    
     void (^completion)(EMMessage *aMessage, EMError *error) = ^(EMMessage *aMessage, EMError *error) {
         if (!error)
         {
@@ -734,7 +735,7 @@
                       count:(NSInteger)count
                      append:(BOOL)isAppend
 {
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     dispatch_async(_messageQueue, ^{
         NSArray *moreMessages = nil;
         if (weakSelf.dataSource && [weakSelf.dataSource respondsToSelector:@selector(messageViewController:loadMessageFromTimestamp:count:)]) {
@@ -1177,7 +1178,7 @@
         }
         [self.recordView removeFromSuperview];
     }
-    __weak typeof(self) weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     [[EMCDDeviceManager sharedInstance] asyncStopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
         if (!error) {
             [weakSelf sendVoiceMessageWithLocalPath:recordPath duration:aDuration];
@@ -1353,7 +1354,7 @@
 {
     if (error && [self.conversation.chatter isEqualToString:conversationChatter])
     {
-        __weak typeof(self) weakSelf = self;
+        __weak __typeof(&*self)weakSelf = self;
         id<IMessageModel> model = nil;
         for (int i = 0; i < self.dataArray.count; i ++) {
             id object = [self.dataArray objectAtIndex:i];
