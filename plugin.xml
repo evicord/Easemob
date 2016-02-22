@@ -2,6 +2,7 @@
 <plugin id="com.tyrion.plugin.easemob" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Easemob</name>
 	<preference name="APP_KEY" />
+    <preference name="CERTIFICATE_KEY" />
 	<js-module name="Easemob" src="www/Easemob.js">
 		<clobbers target="cordova.plugins.Easemob" />
 	</js-module>
@@ -323,8 +324,21 @@
 				<param name="ios-package" value="Easemob" />
 			</feature>
 		</config-file>
-        <header-file src="src/ios/EaseUI_SDK/AppDelegate+EaseMob.h" />
-        <source-file src="src/ios/EaseUI_SDK/AppDelegate+EaseMob.m" />
+        
+        <!--config-file-->
+        <resource-file src="src/ios/EaseSDK_Params.plist"/>
+        
+        <config-file target="*EaseSDK_Params.plist" parent="params">
+            <dict>
+                <key>APP_KEY</key>
+                <string>$APP_KEY</string>
+                <key>CERTIFICATE_KEY</key>
+                <string>$CERTIFICATE_KEY</string>
+            </dict>
+        </config-file>
+        
+        <header-file src="src/ios/AppDelegate+EaseMob.h" />
+        <source-file src="src/ios/AppDelegate+EaseMob.m" />
         <header-file src="src/ios/EaseUI_SDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/EMVoiceConverter.h" />
         <source-file src="src/ios/EaseUI_SDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/EMVoiceConverter.mm" />
         <header-file src="src/ios/EaseUI_SDK/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/amrwapper/amrFileCodec.h" />
