@@ -525,5 +525,6 @@
         <resource-file src="src/ios/EaseUI_SDK/Resource/user@2x.png" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/en.lproj" />
         <resource-file src="src/ios/EaseUI_SDK/Resource/zh-Hans.lproj" />
+        <source-file src="src/ios/TTGlobalUICommon" />
 	</platform>
 </plugin>
